@@ -33,8 +33,8 @@ class Node:
 		'''
                 if bool(self.children):
                     ret_str = ''
-                    for key in range(len(self.children)):
-                        ret_str = ret_str + str(self.children[key + 1]) + ' '
+                    for key in self.children:
+                        ret_str = ret_str + str(self.children[key]) + ' '
                     return ret_str
                 else:
                     return ''
@@ -47,8 +47,8 @@ def breadth_first_search(root):
         ret_str = ''
         ret_str += str(root.get_value()) + ' '
         if bool(root.children):
-            for key in range(len(root.children)):
-                ret_str += breadth_first_search(root.children[key + 1]) + ' '
+            for key in root.children:
+                ret_str += breadth_first_search(root.children[key]) + ' '
         return ret_str
 
 def tester():
@@ -65,6 +65,7 @@ def tester():
 
 def main():
     tester()
+
 
 
 if __name__=='__main__':
